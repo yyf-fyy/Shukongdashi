@@ -5,7 +5,7 @@ class Neo4j():
 		print("create neo4j class ...")
 
 	def connectDB(self):
-		self.graph = Graph("http://localhost:7474", username="neo4j", password="hadoop")
+		self.graph = Graph("http://localhost:7474", username="neo4j", password="89889677")
 	#下面两个函数分别是插入节点和关系
 	def insertNode(self,entity,lable):
 		try:
