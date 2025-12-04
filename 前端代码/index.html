@@ -1,150 +1,156 @@
 <!doctype html>
 <html>
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
-    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
-    <title>底部导航</title>
-    <link rel="stylesheet" type="text/css" href="./css/api.css"/>
-    <link rel="stylesheet" type="text/css" href="./css/style.css"/>
+    <meta name="viewport"
+        content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <title>故障诊断分析平台 - Web版</title>
+    <link rel="stylesheet" type="text/css" href="./css/api.css" />
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
     <style>
-        header{ background-color: #f2f2f2; }
-        header ul li { height: 50px; line-height: 50px; text-align: center; display: none; color: #323237; position: relative;font-size: 18px;  }
-        header ul li.active{ display: block; }
-        #footer{  background-color: #f2f2f2; }
-        #footer ul li{  padding-top: 36px; padding-bottom: 4px; background: url() no-repeat center 2px; background-size: auto 30px; text-align: center; }
-        #footer ul li.active{ color: #6ab494; }
-        #footer ul li:nth-child(1){ background-image: url(./image/bottombtn0101.png); }
-        #footer ul li:nth-child(2){ background-image: url(./image/bottombtn0201.png); }
-        #footer ul li:nth-child(3){ background-image: url(./image/bottombtn0301.png); }
-        #footer ul li:nth-child(4){ background-image: url(./image/bottombtn0401.png); }
-        #footer ul li:nth-child(1).active{ background-image: url(./image/bottombtn0102.png); }
-        #footer ul li:nth-child(2).active{ background-image: url(./image/bottombtn0202.png); }
-        #footer ul li:nth-child(3).active{ background-image: url(./image/bottombtn0302.png); }
-        #footer ul li:nth-child(4).active{ background-image: url(./image/bottombtn0402.png); }
-        .flex-con{
-          overflow: auto
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        #wrap {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: #f2f2f2;
+            flex-shrink: 0;
+        }
+
+        header ul li {
+            height: 35px;
+            line-height: 35px;
+            text-align: center;
+            display: none;
+            color: #323237;
+            position: relative;
+            font-size: 18px;
+        }
+
+        header ul li.active {
+            display: block;
+        }
+
+        #main-iframe {
+            flex-grow: 1;
+            border: none;
+            overflow: auto;
+        }
+
+        #footer {
+            background-color: #f2f2f2;
+            flex-shrink: 0;
+        }
+
+        #footer ul li {
+            padding-top: 36px;
+            padding-bottom: 4px;
+            background: url() no-repeat center 2px;
+            background-size: auto 30px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        #footer ul li.active {
+            color: #6ab494;
+        }
+
+        #footer ul li:nth-child(1) {
+            background-image: url(./image/bottombtn0101.png);
+        }
+
+        #footer ul li:nth-child(2) {
+            background-image: url(./image/bottombtn0201.png);
+        }
+
+        #footer ul li:nth-child(3) {
+            background-image: url(./image/bottombtn0301.png);
+        }
+
+        #footer ul li:nth-child(1).active {
+            background-image: url(./image/bottombtn0102.png);
+        }
+
+        #footer ul li:nth-child(2).active {
+            background-image: url(./image/bottombtn0202.png);
+        }
+
+        #footer ul li:nth-child(3).active {
+            background-image: url(./image/bottombtn0302.png);
         }
     </style>
 </head>
+
 <body>
-<div id="wrap" class="flex-wrap flex-vertical">
-    <header>
-        <ul>
-          <li class="border-b active" style="height:35px" ><p style="margin-top:0px">故障诊断分析平台</p></li>
-          <li class="border-b"style="height:35px" ><p style="margin-top:0px">故障诊断分析平台</p></li>
-          <li class="border-b" style="height:35px" ><p style="margin-top:0px">故障诊断分析平台</p></li>
-        </ul>
-    </header>
-    <div id="main" class="flex-con">
+    <div id="wrap">
+        <header>
+            <ul>
+                <li class="border-b active">
+                    <p style="margin-top:0px">故障诊断分析平台</p>
+                </li>
+                <li class="border-b">
+                    <p style="margin-top:0px">故障诊断分析平台</p>
+                </li>
+                <li class="border-b">
+                    <p style="margin-top:0px">故障诊断分析平台</p>
+                </li>
+            </ul>
+        </header>
 
+        <iframe id="main-iframe" name="contentFrame" src="./html/frame0.html"></iframe>
+
+        <div id="footer" class="border-t">
+            <ul class="flex-wrap">
+                <li onclick="switchTab(this, 0, './html/frame0.html');" class="flex-con active">首页</li>
+                <li onclick="switchTab(this, 1, './html/frame1.html');" class="flex-con">故障诊断</li>
+                <li onclick="switchTab(this, 2, './html/frame2.html');" class="flex-con">使用说明</li>
+            </ul>
+        </div>
     </div>
-    <div id="footer" class="border-t">
-        <ul class="flex-wrap" >
-            <li tapmode="hover" onclick="randomSwitchBtn( this );" class="flex-con active" >首页</li>
-            <li tapmode="hover" onclick="randomSwitchBtn( this );" class="flex-con" >故障诊断</li>
-            <li tapmode="hover" onclick="randomSwitchBtn( this );" class="flex-con" >使用说明</li>
-        </ul>
-    </div>
-</div>
-</body>
-</html>
-<script type="text/javascript" src="script/api.js"></script>
-<script type="text/javascript">
-    apiready = function () {
-        $api.fixStatusBar( $api.dom('header') );
-        api.setStatusBarStyle({
-            style: 'dark',
-            color: '#6ab494'
-        });
-        funIniGroup();
 
-      // 按两次返回键退出
-        ExitApp();
-    }
+    <script type="text/javascript">
+        const contentFrame = document.getElementById('main-iframe');
+        const footerLis = document.querySelectorAll('#footer li');
+        const headerLis = document.querySelectorAll('header li');
 
-    function funIniGroup(){
-        var eHeaderLis = $api.domAll('header li'),
-            frames = [];
-        for (var i = 0,len = eHeaderLis.length; i < len; i++) {
-                frames.push( {
-                    name: 'frame'+i,
-                    url: './html/frame'+i+'.html',
-                    bgColor : 'rgba(0,0,0,.2)',
-                    bounces:true
-                } )
-        }
-        api.openFrameGroup({
-            name: 'group',
-            scrollEnabled: false,
-            rect: {
-                x: 0,
-                y: $api.dom('header').offsetHeight,
-                w: api.winWidth,
-                h: $api.dom('#main').offsetHeight
-            },
-            index: 0,
-            frames: frames
-        }, function (ret, err) {
-
-        });
-    }
-
-    // 随意切换按钮
-    function randomSwitchBtn( tag ) {
-        if( tag == $api.dom('#footer li.active') )return;
-        var eFootLis = $api.domAll('#footer li'),
-            eHeaderLis = $api.domAll('header li'),
-            index = 0;
-        for (var i = 0,len = eFootLis.length; i < len; i++) {
-            if( tag == eFootLis[i] ){
-                index = i;
-            }else{
-                $api.removeCls(eFootLis[i], 'active');
-                $api.removeCls(eHeaderLis[i], 'active');
+        // 全局导航函数，供 iframe 内部页面调用
+        function navigateTo(url) {
+            if (contentFrame) {
+                contentFrame.src = url;
             }
         }
-        $api.addCls( eFootLis[index], 'active');
-        $api.addCls( eHeaderLis[index], 'active');
-        api.setFrameGroupIndex({
-            name: 'group',
-            index: index
-        });
-    }
 
+        // 切换底部 Tab
+        function switchTab(tabElement, index, url) {
+            if (tabElement.classList.contains('active')) {
+                return;
+            }
 
-// 设置按两次返回键退出程序
-    function ExitApp() {
-    var ci = 0;
-    var time1, time2;
-    api.addEventListener({
-    name : 'keyback'
-    }, function(ret, err) {
-    if (ci == 0) {
-    time1 = new Date().getTime();
-    ci = 1;
+            // 更新底部导航样式
+            footerLis.forEach((li, i) => {
+                li.classList.toggle('active', i === index);
+            });
 
-     api.toast({msg:'再按一次返回键退出'});
+            // 更新头部标题样式
+            headerLis.forEach((li, i) => {
+                li.classList.toggle('active', i === index);
+            });
 
-    } else if (ci == 1) {
-    time2 = new Date().getTime();
-    if (time2 - time1 < 3000) {
-    api.closeWidget({
-    id : api.appId,
-    retData : {
-    name : 'closeWidget'
-    },
-    silent : true
-    });
-    } else {
-    ci = 0;
-     api.toast({msg:'再按一次返回键退出'});
-    }
-    }
-    });
-    }
+            // 切换 iframe 内容
+            navigateTo(url);
+        }
+    </script>
+</body>
 
-
-
-
-</script>
+</html>

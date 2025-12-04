@@ -1,103 +1,377 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
-    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
-    <title>文档</title>
-    <link rel="stylesheet" type="text/css" href="../css/api.css"/>
-    <link rel="stylesheet" type="text/css" href="../css/style.css"/>
-    <style>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+  <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+  <title>文档</title>
+  <link rel="stylesheet" type="text/css" href="../css/api.css" />
+  <link rel="stylesheet" type="text/css" href="../css/style.css" />
+  <style>
     /* 头部样式 */
-    .topbar {background: #FF8400; height:50px; border-bottom: 1px solid #DDDFE3;}
-    .topbar_title {display: inline-block;font-size: 20px; line-height: 50px;padding-left: 12px;}
-    .hr01, .hr02 {height: 28px;}
-    .headerico {padding: 11px 15px 11px 15px;}
-    .headericohover {background: #DADDE0;}
-    .fr{float: right;}
-    .fl{float: left;}
+    .topbar {
+      background: #FF8400;
+      height: 50px;
+      border-bottom: 1px solid #DDDFE3;
+    }
+
+    .topbar_title {
+      display: inline-block;
+      font-size: 20px;
+      line-height: 50px;
+      padding-left: 12px;
+    }
+
+    .hr01,
+    .hr02 {
+      height: 28px;
+    }
+
+    .headerico {
+      padding: 11px 15px 11px 15px;
+    }
+
+    .headericohover {
+      background: #DADDE0;
+    }
+
+    .fr {
+      float: right;
+    }
+
+    .fl {
+      float: left;
+    }
 
     /*第一头部*/
-    #logo {padding: 11px 0 0 10px;height: 28px;}
-    #citylist {height: 50px; line-height: 50px;padding-left: 15px; font-size: 18px; color: #fff;}
-    .citylistarrow {vertical-align: top; width: 20px; padding-top: 15px;}
-   .search {height: 34px;line-height: 34px; padding-left: 10px; border-radius: 30px;  margin-top: 8px; position: absolute; left: 20px; right: 60px;font-size: 14px;}
-   .search img:first-child {vertical-align: top; width: 20px; padding-top: 7px;padding-right: 10px;}
-   .search img:last-child {vertical-align: top; width: 20px; padding-top: 7px;}
-   .firstSearch {left: 90px;right: 60px;background-color: #FA6604;color: #FDC29B;}
+    #logo {
+      padding: 11px 0 0 10px;
+      height: 28px;
+    }
+
+    #citylist {
+      height: 50px;
+      line-height: 50px;
+      padding-left: 15px;
+      font-size: 18px;
+      color: #fff;
+    }
+
+    .citylistarrow {
+      vertical-align: top;
+      width: 20px;
+      padding-top: 15px;
+    }
+
+    .search {
+      height: 34px;
+      line-height: 34px;
+      padding-left: 10px;
+      border-radius: 30px;
+      margin-top: 8px;
+      position: absolute;
+      left: 20px;
+      right: 60px;
+      font-size: 14px;
+    }
+
+    .search img:first-child {
+      vertical-align: top;
+      width: 20px;
+      padding-top: 7px;
+      padding-right: 10px;
+    }
+
+    .search img:last-child {
+      vertical-align: top;
+      width: 20px;
+      padding-top: 7px;
+    }
+
+    .firstSearch {
+      left: 90px;
+      right: 60px;
+      background-color: #FA6604;
+      color: #FDC29B;
+    }
 
     /* 第二头部 */
-    #topbar_refresh {width: 40px;padding:5px 10px;}
-    .whitebar {background-color: #fcfcfc;}
-    #whitecity {height: 50px; line-height: 50px;padding-left: 15px; font-size: 18px;color: #FF8400;}
-   .secCitylistarrow {vertical-align: top; width: 15px; padding-top: 18px;padding-left: 5px;}
-   .secSearch {left: 90px;right: 15px;background-color: #E8E8E8;color: #999;}
+    #topbar_refresh {
+      width: 40px;
+      padding: 5px 10px;
+    }
 
-   /* 第三头部 */
-   .swipepic {padding: 5px 15px 2px 15px;height: 23px;}
-   .swipe div {font-size: 4px; text-align: center;color: #999;}
-   .thrSearch {left: 50px;right: 60px;background-color: #E8E8E8;color: #999;}
+    .whitebar {
+      background-color: #fcfcfc;
+    }
+
+    #whitecity {
+      height: 50px;
+      line-height: 50px;
+      padding-left: 15px;
+      font-size: 18px;
+      color: #FF8400;
+    }
+
+    .secCitylistarrow {
+      vertical-align: top;
+      width: 15px;
+      padding-top: 18px;
+      padding-left: 5px;
+    }
+
+    .secSearch {
+      left: 90px;
+      right: 15px;
+      background-color: #E8E8E8;
+      color: #999;
+    }
+
+    /* 第三头部 */
+    .swipepic {
+      padding: 5px 15px 2px 15px;
+      height: 23px;
+    }
+
+    .swipe div {
+      font-size: 4px;
+      text-align: center;
+      color: #999;
+    }
+
+    .thrSearch {
+      left: 50px;
+      right: 60px;
+      background-color: #E8E8E8;
+      color: #999;
+    }
 
     /* 头部切换样式 */
-    .activebar {display: block;}
+    .activebar {
+      display: block;
+    }
 
     /* 底部切换按钮样式 */
-    ul {display: -webkit-box; display: -webkit-flex; display: flex; }
-    #footer {height: 61px; line-height: 60px; background-color: #FAFAFA;border-top: 1px solid #FAFAFA; }
-    #footer li{-webkit-box-flex: 1; -webkit-flex: 1; flex:1; height: 60px;}
+    ul {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex;
+    }
+
+    #footer {
+      height: 61px;
+      line-height: 60px;
+      background-color: #FAFAFA;
+      border-top: 1px solid #FAFAFA;
+    }
+
+    #footer li {
+      -webkit-box-flex: 1;
+      -webkit-flex: 1;
+      flex: 1;
+      height: 60px;
+    }
 
     /* 选项卡样式 */
-    .scrollbar {display: -webkit-box;display: -webkit-flex; text-align: center; height: 40px; line-height: 40px;background: #EBECF0;font-size: 12px;position: relative;}
-    .col1 {-webkit-box-flex:1;-webkit-flex: 1;flex:1;color: #909090;}
-    .indexbar {position: absolute;/*background: #0fc;*/width: 50%;height: 5px;left: 0px;bottom: 0px;-webkit-transition: 300ms;}
-    .redbox {background: #DB4646;width: 40px;height: 5px;position: relative;left: auto;right: auto; margin-left: auto; margin-right: auto;}
+    .scrollbar {
+      display: -webkit-box;
+      display: -webkit-flex;
+      text-align: center;
+      height: 40px;
+      line-height: 40px;
+      background: #EBECF0;
+      font-size: 12px;
+      position: relative;
+    }
+
+    .col1 {
+      -webkit-box-flex: 1;
+      -webkit-flex: 1;
+      flex: 1;
+      color: #909090;
+    }
+
+    .indexbar {
+      position: absolute;
+      /*background: #0fc;*/
+      width: 50%;
+      height: 5px;
+      left: 0px;
+      bottom: 0px;
+      -webkit-transition: 300ms;
+    }
+
+    .redbox {
+      background: #DB4646;
+      width: 40px;
+      height: 5px;
+      position: relative;
+      left: auto;
+      right: auto;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
 
     /* 本地刷新图标 */
-    #localrefresh {display:none;float: right; width: 40px; padding: 5px 10px;}
-    #field1::-webkit-input-placeholder { color:#666; }
-    #field1 {height: 30px; line-height: 30px; width: 70%;}
+    #localrefresh {
+      display: none;
+      float: right;
+      width: 40px;
+      padding: 5px 10px;
+    }
 
-    .swipe {line-height: 50px;margin-right: 10px;color: #FF8400;}
-    .back {float: left; }
-    .back img {height: 30px; margin-top: 10px; margin-left: 10px; margin-bottom: 6px; margin-right: 30px;}
-    .topbar .title {line-height: 50px;font-size: 22px;position: absolute;left: 50%;-webkit-transform:translateX(-50%);transform:translateX(-50%);}
+    #field1::-webkit-input-placeholder {
+      color: #666;
+    }
+
+    #field1 {
+      height: 30px;
+      line-height: 30px;
+      width: 70%;
+    }
+
+    .swipe {
+      line-height: 50px;
+      margin-right: 10px;
+      color: #FF8400;
+    }
+
+    .back {
+      float: left;
+    }
+
+    .back img {
+      height: 30px;
+      margin-top: 10px;
+      margin-left: 10px;
+      margin-bottom: 6px;
+      margin-right: 30px;
+    }
+
+    .topbar .title {
+      line-height: 50px;
+      font-size: 22px;
+      position: absolute;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%);
+    }
 
 
 
     /* 详细信息 */
-    .content{
+    .content {
       margin-top: 10px;
       margin-left: 20px;
       margin-right: 20px;
     }
 
     /* 评论模块*/
-    .h20 {height: 20px;background-color: #F5F5F5;}
-    .commentInput{width:70%;height: 50px;border-width: 1px;border-color: #FC5500;}
-    .buynow {background-color: #1ab394; color: #fff; height: 25px; line-height: 25px; border-radius: 3px;padding: 10px 20px;margin-top: 7px;}
+    .h20 {
+      height: 20px;
+      background-color: #F5F5F5;
+    }
 
+    .commentInput {
+      width: 70%;
+      height: 50px;
+      border-width: 1px;
+      border-color: #FC5500;
+    }
 
-    </style>
+    .buynow {
+      background-color: #1ab394;
+      color: #fff;
+      height: 25px;
+      line-height: 25px;
+      border-radius: 3px;
+      padding: 10px 20px;
+      margin-top: 7px;
+    }
+
+    /* 关系图谱样式 */
+    #graphContainer {
+      margin-top: 20px;
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+
+    #graphLegend {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+      font-size: 12px;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      margin-right: 15px;
+      margin-bottom: 5px;
+    }
+
+    .legend-color {
+      width: 15px;
+      height: 15px;
+      margin-right: 5px;
+      border: 1px solid #ccc;
+    }
+
+    #graphChart {
+      width: 100%;
+      max-width: 100%;
+      height: 400px;
+      min-height: 400px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      background: #fff;
+      margin-top: 10px;
+      overflow: hidden;
+    }
+
+    /* 确保图表容器可见 */
+    @media screen and (max-width: 768px) {
+      #graphChart {
+        height: 350px;
+      }
+    }
+
+    /* 确保容器宽度不超过父元素 */
+    #graphContainer {
+      max-width: 100%;
+      overflow-x: auto;
+    }
+  </style>
 </head>
+
 <body>
   <div id="wrap">
     <!-- 第三头部 -->
     <div id="thridHeader" class="titlebar" style="height:65px">
       <div class="topbar whitebar" style="height:65px">
-        <div class="back"  tapmode="" onclick="goback()" style="margin-top:20px"><img src="../image/ic_back_u.png" alt=""></div>
+        <div class="back" tapmode="" onclick="goback()" style="margin-top:20px"><img src="../image/ic_back_u.png"
+            alt=""></div>
         <div class="title" id="title" style="margin-top:20px">详情</div>
       </div>
     </div>
 
     <div class="content">
       <h4>可能的原因</h4>
-        <p id="question"></p>
-        <br/>
+      <p id="question"></p>
+      <br />
       <h4>解决方案</h4>
       <div id="answer"></div>
     </div>
 
+    <!-- 关系图谱 -->
+    <div id="graphContainer" style="display: none;">
+      <h4 style="margin-bottom: 10px;">关系图谱</h4>
+      <div id="graphLegend"></div>
+      <div id="graphChart"></div>
+    </div>
 
   </div>
 
@@ -108,22 +382,358 @@
 
 
 </body>
+
 </html>
+<script type="text/javascript" src="../script/echarts.min.js"></script>
 <script>
-apiready = function(){
-  //获取上一页面传来的数据（解决方案）
-  var listObj = api.pageParam.listObj;
+  function getQueryParams() {
+    const params = new URLSearchParams(window.location.search);
+    var listObj = params.get('listObj');
+    // 如果参数为空，尝试从 hash 中获取
+    if (!listObj && window.location.hash) {
+      listObj = window.location.hash.substring(1);
+    }
+    return {
+      listObj: listObj
+    };
+  }
 
-  alert(listObj);
-  //
-  // questionContent = document.getElementById('question');
-  // questionContent.innerHTML = question;
-  // answerContent = document.getElementById('answer');
-  // answerContent.innerHTML = answer;
-};
+  window.onload = function () {
+    try {
+      const { listObj } = getQueryParams();
 
+      if (!listObj) {
+        console.error('缺少 listObj 参数');
+        document.getElementById('question').innerHTML = '<p style="color:red;">数据加载失败：缺少参数</p>';
+        return;
+      }
 
-function goback () {
-  api.closeWin({name:'answerReason_detail'});
-}
+      // 解码 URL 参数
+      const decodedListObj = decodeURIComponent(listObj);
+      const data = JSON.parse(decodedListObj);
+
+      const questionContent = document.getElementById('question');
+      const answerContent = document.getElementById('answer');
+
+      // 显示原因
+      if (data.yuanyin) {
+        questionContent.innerHTML = data.yuanyin;
+      } else {
+        questionContent.innerHTML = '<p style="color:#999;">暂无原因描述</p>';
+      }
+
+      // 显示解决方案
+      // answer 可能是数组或字符串
+      var solutions = [];
+
+      // 首先尝试从 answer 字段获取
+      if (data.answer) {
+        if (Array.isArray(data.answer)) {
+          // 如果是数组，提取所有解决方案
+          for (var i = 0; i < data.answer.length; i++) {
+            if (data.answer[i] && data.answer[i].trim()) {
+              solutions.push(data.answer[i]);
+            }
+          }
+        } else if (typeof data.answer === 'string' && data.answer.trim()) {
+          // 如果是字符串，直接添加
+          solutions.push(data.answer);
+        }
+      }
+
+      // 如果 answer 为空，尝试从 list 字段中提取解决方案
+      if (solutions.length === 0 && data.list && Array.isArray(data.list)) {
+        for (var j = 0; j < data.list.length; j++) {
+          var item = data.list[j];
+          // 查找关系为"解决办法"的项
+          if (item.rel === '解决办法' || item.rel === '解决方法' && item.entity2) {
+            var solution = item.entity2;
+            // 避免重复添加
+            if (solution && solution.trim() && solutions.indexOf(solution) === -1) {
+              solutions.push(solution);
+            }
+          }
+        }
+      }
+
+      // 显示解决方案
+      if (solutions.length > 0) {
+        var answerHtml = '<ul style="list-style-type: disc; padding-left: 20px;">';
+        for (var k = 0; k < solutions.length; k++) {
+          answerHtml += '<li style="margin-bottom: 10px; line-height: 1.6;">' + solutions[k] + '</li>';
+        }
+        answerHtml += '</ul>';
+        answerContent.innerHTML = answerHtml;
+      } else {
+        answerContent.innerHTML = '<p style="color:#999;">暂无解决方案</p>';
+      }
+
+      // 显示关系图谱（如果有 list 数据）
+      if (data.list && Array.isArray(data.list) && data.list.length > 0) {
+        document.getElementById('graphContainer').style.display = 'block';
+        renderGraph(data.list);
+      }
+    } catch (error) {
+      console.error('数据解析失败:', error);
+      document.getElementById('question').innerHTML = '<p style="color:red;">数据解析失败：' + error.message + '</p>';
+      document.getElementById('answer').innerHTML = '<p style="color:red;">请返回重试</p>';
+    }
+  };
+
+  // 渲染关系图谱（参考原来的图谱逻辑）
+  function renderGraph(listData) {
+    if (!listData || !Array.isArray(listData) || listData.length === 0) {
+      return;
+    }
+
+    // 等待 DOM 完全加载后再初始化图表
+    function initChart() {
+      var chartDom = document.getElementById('graphChart');
+      if (!chartDom) {
+        console.error('找不到图表容器');
+        return;
+      }
+
+      // 确保容器有尺寸
+      if (chartDom.offsetWidth === 0 || chartDom.offsetHeight === 0) {
+        console.warn('图表容器尺寸为 0，等待容器渲染...');
+        setTimeout(initChart, 100);
+        return;
+      }
+
+      // 检查 ECharts 是否已加载
+      if (typeof echarts === 'undefined') {
+        console.error('ECharts 库未加载');
+        return;
+      }
+
+      var myChart = echarts.init(chartDom);
+      if (!myChart) {
+        console.error('ECharts 初始化失败');
+        return;
+      }
+
+      var listdata = new Array();
+      var listlink = new Array();
+      var locax = new Array(300, 800, 550, 550, 250, 400, 800, 700);
+      var locay = new Array(300, 300, 100, 500, 800, -150, 100, 200);
+
+      // 复制数据，避免修改原始数据
+      var obj1 = [];
+      for (var k = 0; k < listData.length; k++) {
+        obj1.push({
+          entity1: listData[k].entity1,
+          entity2: listData[k].entity2,
+          rel: listData[k].rel,
+          entity1_type: listData[k].entity1_type,
+          entity2_type: listData[k].entity2_type
+        });
+      }
+
+      var defin = ""; // 用于存储节点
+      var col = "";
+      var nameMap = {}; // 存储原始名称到显示名称的映射
+
+      // 第一步：收集所有唯一节点（按照原来的逻辑）
+      for (var i = 0; i < obj1.length; i++) {
+        var pan1 = defin.indexOf(obj1[i].entity1) != -1;
+        var pan2 = defin.indexOf(obj1[i].entity2) != -1;
+
+        // 处理 entity1
+        if (pan1 == false) { // 判断该节点名字是否已经存上了
+          defin += obj1[i].entity1;
+          
+          // 显示完整名称，不截断（实体上显示问题）
+          var displayName1 = obj1[i].entity1;
+          nameMap[listData[i].entity1] = displayName1; // 建立映射
+
+          // 根据类型分配颜色（固定颜色映射）
+          if (obj1[i].entity1_type == "品牌") col = "#CC0000";
+          else if (obj1[i].entity1_type == "型号") col = "#CC66FF";
+          else if (obj1[i].entity1_type == "故障代码") col = "#99CCFF";
+          else if (obj1[i].entity1_type == "故障类型") col = "#97980e";
+          else if (obj1[i].entity1_type == "解决方法" || obj1[i].entity1_type == "解决办法") col = "#888888";
+          else if (obj1[i].entity1_type == "故障描述" || obj1[i].entity1_type == "现象") col = "#FA8072";
+          else if (obj1[i].entity1_type == "间接原因" || obj1[i].entity1_type == "最终原因") col = "#99CCFF";
+          else col = "#999999";
+
+          var tem = {
+            name: displayName1, // 显示完整名称
+            x: locax[i],
+            y: locay[i],
+            label: {
+              normal: {
+                show: true,
+                formatter: displayName1 // 实体上显示完整名称
+              }
+            },
+            itemStyle: {
+              normal: {
+                color: col,
+              }
+            }
+          };
+          listdata.push(tem);
+        } else {
+          // 如果节点已存在，建立映射
+          var originalName1 = listData[i].entity1;
+          nameMap[originalName1] = nameMap[originalName1] || originalName1;
+        }
+
+        // 处理 entity2
+        if (pan2 == false) { // 判断该节点名字是否已经存上了
+          defin += obj1[i].entity2;
+          
+          // 显示完整名称，不截断（实体上显示问题）
+          var displayName2 = obj1[i].entity2;
+          nameMap[listData[i].entity2] = displayName2; // 建立映射
+
+          // 根据类型分配颜色（固定颜色映射）
+          if (obj1[i].entity2_type == "品牌") col = "#CC0000";
+          else if (obj1[i].entity2_type == "型号") col = "#CC66FF";
+          else if (obj1[i].entity2_type == "故障代码") col = "#99CCFF";
+          else if (obj1[i].entity2_type == "故障类型") col = "#97980e";
+          else if (obj1[i].entity2_type == "解决方法" || obj1[i].entity2_type == "解决办法") col = "#888888";
+          else if (obj1[i].entity2_type == "故障描述" || obj1[i].entity2_type == "现象") col = "#FA8072";
+          else if (obj1[i].entity2_type == "间接原因" || obj1[i].entity2_type == "最终原因") col = "#99CCFF";
+          else col = "#999999";
+
+          var tem1 = {
+            name: displayName2, // 显示完整名称
+            x: locax[7 - i],
+            y: locay[7 - i],
+            label: {
+              normal: {
+                show: true,
+                formatter: displayName2 // 实体上显示完整名称
+              }
+            },
+            itemStyle: {
+              normal: {
+                color: col,
+              }
+            }
+          };
+          listdata.push(tem1);
+        } else {
+          // 如果节点已存在，建立映射
+          var originalName2 = listData[i].entity2;
+          nameMap[originalName2] = nameMap[originalName2] || originalName2;
+        }
+      }
+
+      // 第二步：添加连接关系（使用映射找到正确的显示名称）
+      for (var i = 0; i < obj1.length; i++) {
+        // 使用映射找到正确的显示名称
+        var sourceName = nameMap[listData[i].entity1] || obj1[i].entity1;
+        var targetName = nameMap[listData[i].entity2] || obj1[i].entity2;
+
+        var tem4 = {
+          source: sourceName,
+          target: targetName,
+          label: {
+            normal: {
+              show: true,
+              formatter: obj1[i].rel // 线上显示关系名称
+            }
+          },
+          lineStyle: {
+            normal: {
+              curveness: 0.2
+            }
+          }
+        };
+        listlink.push(tem4);
+      }
+
+      // 生成图例（固定颜色映射）
+      var legendHtml = '';
+      var legendTypes = [
+        { type: '品牌', color: '#CC0000' },
+        { type: '型号', color: '#CC66FF' },
+        { type: '故障代码', color: '#99CCFF' },
+        { type: '故障类型', color: '#97980e' },
+        { type: '解决方法', color: '#888888' },
+        { type: '故障描述', color: '#FA8072' },
+        { type: '现象', color: '#FA8072' },
+        { type: '间接原因', color: '#99CCFF' },
+        { type: '最终原因', color: '#99CCFF' }
+      ];
+      
+      // 检查哪些类型在数据中实际存在
+      var existingTypes = new Set();
+      for (var j = 0; j < listData.length; j++) {
+        if (listData[j].entity1_type) existingTypes.add(listData[j].entity1_type);
+        if (listData[j].entity2_type) existingTypes.add(listData[j].entity2_type);
+      }
+      
+      for (var j = 0; j < legendTypes.length; j++) {
+        if (existingTypes.has(legendTypes[j].type)) {
+          legendHtml += '<div class="legend-item">' +
+            '<div class="legend-color" style="background-color: ' + legendTypes[j].color + ';"></div>' +
+            '<span>' + legendTypes[j].type + '</span>' +
+            '</div>';
+        }
+      }
+      document.getElementById('graphLegend').innerHTML = legendHtml;
+
+      // 配置 ECharts（按照原来的配置方式）
+      var option = {
+        backgroundColor: '#eee',
+        title: {
+          text: '关系图谱'
+        },
+        tooltip: {},
+        animationDurationUpdate: 550,
+        animationEasingUpdate: 'quinticInOut',
+        series: [{
+          type: 'graph',
+          layout: 'none',
+          symbolSize: 50,
+          roam: true,
+          label: {
+            normal: {
+              show: true
+            }
+          },
+          edgeSymbol: ['circle', 'arrow'],
+          edgeSymbolSize: [4, 10],
+          edgeLabel: {
+            normal: {
+              textStyle: {
+                fontSize: 10
+              }
+            }
+          },
+          data: listdata,
+          links: listlink,
+          lineStyle: {
+            normal: {
+              opacity: 0.9,
+              width: 2,
+              curveness: 0
+            }
+          }
+        }]
+      };
+
+      if (option && typeof option === "object") {
+        myChart.setOption(option, true);
+      }
+
+      // 响应窗口大小变化
+      window.addEventListener('resize', function () {
+        if (myChart && !myChart.isDisposed()) {
+          myChart.resize();
+        }
+      });
+    }
+
+    // 启动图表初始化
+    initChart();
+  }
+
+  function goback() {
+    history.back();
+  }
 </script>
